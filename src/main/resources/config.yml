@@ -1,0 +1,7 @@
+#####################################################################
+messages:
+  prefix: "§8[§6Essentials§8]§r"
+  player-not-found: "§cThe player §6{player} §7is not on this server!"
+  no-permission: "§cYou do not have the permission to do that!"
+  fly-message: "§7Fly-Mode has been {flymode}"
+  fly-message-other: "§7Fly-Mode has been {flymode} §7for player {player}"
