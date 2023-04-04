@@ -67,7 +67,7 @@ public class FlyCommand extends PluginsCommand {
 
                         player.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.fly-mode").replace("{flymode}", "§2ENABLED"));
 
-                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.fl-mode-other").replace("{flymode}", "§2ENABLED"));
+                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.fl-mode-other").replace("{flymode}", "§2ENABLED").replace("{player}", Server.getInstance().getPlayer(args[0]).getName()));
 
                         player.setAllowFlight(true);
 
@@ -75,7 +75,7 @@ public class FlyCommand extends PluginsCommand {
 
                         player.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.fly-mode").replace("{flymode}", "§cDISABLED"));
 
-                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.fl-mode-other").replace("{flymode}", "§cDISABLED"));
+                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.fly-mode-other").replace("{flymode}", "§cDISABLED").replace("{player}", Server.getInstance().getPlayer(args[0]).getName()));
 
                         player.setAllowFlight(false);
 

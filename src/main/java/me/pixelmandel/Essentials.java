@@ -2,7 +2,10 @@ package me.pixelmandel;
 
 import cn.nukkit.command.CommandMap;
 import cn.nukkit.plugin.PluginBase;
+import me.pixelmandel.commands.BroadcastCommand;
+import me.pixelmandel.commands.FeedCommand;
 import me.pixelmandel.commands.FlyCommand;
+import me.pixelmandel.commands.HealCommand;
 
 public class Essentials extends PluginBase {
 
@@ -17,6 +20,9 @@ public class Essentials extends PluginBase {
 
         CommandMap map = getServer().getCommandMap();
         map.register("fly", new FlyCommand());
+        map.register("broadcast", new BroadcastCommand());
+        map.register("heal", new HealCommand());
+        map.register("feed", new FeedCommand());
 
     }
 }
