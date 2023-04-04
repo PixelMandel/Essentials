@@ -2,13 +2,14 @@ package me.pixelmandel.commands;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
+import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.command.defaults.PluginsCommand;
 import me.pixelmandel.Essentials;
 
-public class FeedCommand extends PluginsCommand {
+public class FeedCommand extends Command {
 
     public FeedCommand() {
         super("feed");
@@ -23,7 +24,7 @@ public class FeedCommand extends PluginsCommand {
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
 
-        if (sender.hasPermission("essentials.feed")){
+        if (sender.hasPermission("essentials.feed") || sender.isOp()){
 
             if (args.length == 0){
 
@@ -36,16 +37,16 @@ public class FeedCommand extends PluginsCommand {
 
             } else {
 
-                if (sender.hasPermission("essentials.feed.other")){
+                if (sender.hasPermission("essentials.feed.other") || sender.isOp()){
 
                     if (Server.getInstance().getPlayer(args[0]) == null){
 
-                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.player-not-found"));
+                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.player-not-found").replace("{player}", args[0]));
 
                     } else {
 
-                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.feed.other").replace("{player}", Server.getInstance().getPlayer(args[0]).getName()));
-                        Server.getInstance().getPlayer(args[0]).sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.feed"));
+                        sender.sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.feed-message-other").replace("{player}", Server.getInstance().getPlayer(args[0]).getName()));
+                        Server.getInstance().getPlayer(args[0]).sendMessage(Essentials.instance.getConfig().getString("messages.prefix") + Essentials.instance.getConfig().getString("messages.feed-message"));
                         Server.getInstance().getPlayer(args[0]).getFoodData().setLevel(20);
 
                         return true;

@@ -1,11 +1,11 @@
 #####################################################################
 messages:
   prefix: "§8[§6Essentials§8]§r"
-  player-not-found: "§cDer Spieler §6{} §ckonnte nicht gefunden werden!"
+  player-not-found: "§cDer Spieler §6{player} §ckonnte nicht gefunden werden!"
   no-permission: "§cYou dont have the permission to do that!"
   fly-message: "§7Flug-Modus wurde {flymode}."
   fly-message-other: "§7Flug-Modus wurde {flymode} §7für den Spieler §6{player}§7."
   heal-message: "§aDu wurdest geheilt."
   heal-message-other: "§aDu hast §6{player} §ageheilt."
-  feed-messages: "§aDein Hunger wurde aufgefüllt."
+  feed-message: "§aDein Hunger wurde aufgefüllt."
   feed-message-other: "§7Der Hunger von §6{player} §7wurde aufgefüllt."

@@ -1,13 +1,15 @@
 package me.pixelmandel.commands;
 
+import cn.nukkit.Player;
 import cn.nukkit.Server;
+import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.command.defaults.PluginsCommand;
 import me.pixelmandel.Essentials;
 
-public class BroadcastCommand extends PluginsCommand {
+public class BroadcastCommand extends Command {
 
     public BroadcastCommand() {
         super("broadcast");
@@ -23,7 +25,7 @@ public class BroadcastCommand extends PluginsCommand {
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
 
-        if (sender.hasPermission("essential.broadcast")) {
+        if (sender.hasPermission("essential.broadcast") || sender.isOp()) {
 
             if (args.length == 0) {
 
@@ -38,6 +40,12 @@ public class BroadcastCommand extends PluginsCommand {
                 }
 
                 Server.getInstance().broadcastMessage(Essentials.instance.getConfig().getString("messages.prefix") + message);
+
+                for (Player player : Server.getInstance().getOnlinePlayers().values()){
+
+                    player.sendActionBar(Essentials.instance.getConfig().getString("messages.prefix") + message);
+
+                }
                 return true;
 
             }
@@ -49,6 +57,6 @@ public class BroadcastCommand extends PluginsCommand {
 
         }
 
-        return false;
+        return true;
     }
 }

@@ -14,15 +14,18 @@ public class Essentials extends PluginBase {
     @Override
     public void onEnable() {
 
+        instance = this;
+
         saveDefaultConfig();
 
         getServer().getLogger().info(this.getConfig().getString("messages.prefix") + "§aPlugin gestartet!");
 
-        CommandMap map = getServer().getCommandMap();
-        map.register("fly", new FlyCommand());
-        map.register("broadcast", new BroadcastCommand());
-        map.register("heal", new HealCommand());
-        map.register("feed", new FeedCommand());
+        //CommandMap map = getServer().getCommandMap();
+        getServer().getCommandMap().register("fly", new FlyCommand());
+        getServer().getCommandMap().register("broadcast", new BroadcastCommand());
+        getServer().getCommandMap().register("heal", new HealCommand());
+        getServer().getCommandMap().register("feed", new FeedCommand());
+
 
     }
 }

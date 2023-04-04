@@ -1,0 +1,27 @@
+name: Essentials
+main: me.pixelmandel.Essentials
+version: 0.1
+author: PixelMandel
+
+permissions:
+  essentials.fly:
+    description: Allows you to enable fly mode
+    default: op
+  essentials.fly.other:
+    description: Allows you to enable fly mode for other players
+    default: op
+  essentials.heal:
+    description: Allows you to heal yourself
+    default: op
+  essentials.heal.other:
+    description: Allows you to heal a player
+    default: op
+  essentials.feed:
+    description: Allows you to feed yourself
+    default: op
+  essentials.feed.other:
+    description: Allows you to feed a player
+    default: op
+  essentials.broadcast:
+    description: Allows you to broadcast a message
+    default: op
