@@ -19,7 +19,7 @@ public class BroadcastCommand extends Command {
         this.setDescription("Broadcast a message to all players");
         this.setPermission("essentials.broadcast");
         this.setAliases(new String[]{"bc"});
-        this.setUsage("/fly <message>");
+        this.setUsage("/broadcast <message>");
     }
 
     @Override
